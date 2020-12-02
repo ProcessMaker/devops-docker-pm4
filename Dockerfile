@@ -7,7 +7,7 @@ LABEL processmaker-stack="pm4"
 
 WORKDIR /tmp/
 ## install tools ##
-RUN yum -y update && yum install -y wget yum-utils jq
+RUN yum -y update && yum install -y wget yum-utils
 ## install nginx ##
 RUN echo -e "[nginx] \nname=nginx repo \nbaseurl=http://nginx.org/packages/rhel/7/\$basearch/ \ngpgcheck=0 \nenabled=1" > /etc/yum.repos.d/nginx.repo ; \
     yum -y update && yum clean all && yum -y install nginx ; \
@@ -55,6 +55,8 @@ RUN yum remove docker* -y ; \
 ## Install Supervisor ##
 RUN yum install -y supervisor ; \
     systemctl enable supervisord ;
+## Install jq
+RUN yum install -y jq ;
 
 ENTRYPOINT ["/usr/sbin/init"]
 # Docker entrypoint
