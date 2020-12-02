@@ -54,6 +54,5 @@ RUN yum remove docker* -y ; \
     systemctl enable docker 
 
 ENTRYPOINT ["/usr/sbin/init"]
-
 # Docker entrypoint
 EXPOSE 80 6001
