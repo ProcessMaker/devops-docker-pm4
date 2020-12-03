@@ -62,7 +62,7 @@ RUN yum install -y supervisor ; \
 ## Install jq ##
 RUN yum install -y jq ;
 ## Install pcov ##
-RUN yum install -y php74-php-pecl-pcov
+RUN yum install -y php-pcov ;
 
 ENTRYPOINT ["/usr/sbin/init"]
 # Docker entrypoint
