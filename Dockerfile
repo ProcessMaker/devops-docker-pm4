@@ -59,8 +59,10 @@ RUN yum remove docker* -y ; \
 ## Install Supervisor ##
 RUN yum install -y supervisor ; \
     systemctl enable supervisord ;
-## Install jq
+## Install jq ##
 RUN yum install -y jq ;
+## Install pcov ##
+RUN yum install -y php74-php-pecl-pcov
 
 ENTRYPOINT ["/usr/sbin/init"]
 # Docker entrypoint
