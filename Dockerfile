@@ -8,6 +8,10 @@ LABEL processmaker-stack="pm4"
 WORKDIR /tmp/
 ## install tools ##
 RUN yum -y update && yum install -y wget yum-utils
+## install mysql-client ##
+RUN yum remove -y mariadb* ; \
+    yum localinstall -y https://repo.mysql.com//mysql57-community-release-el7-11.noarch.rpm ; \
+    yum install -y mysql-community-client
 ## install nginx ##
 RUN echo -e "[nginx] \nname=nginx repo \nbaseurl=http://nginx.org/packages/rhel/7/\$basearch/ \ngpgcheck=0 \nenabled=1" > /etc/yum.repos.d/nginx.repo ; \
     yum -y update && yum clean all && yum -y install nginx ; \
