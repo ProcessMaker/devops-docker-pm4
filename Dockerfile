@@ -61,6 +61,8 @@ RUN yum install -y supervisor ; \
     systemctl enable supervisord ;
 ## Install jq ##
 RUN yum install -y jq ;
+## Install ssh client ##
+RUN yum install -y openssh-clients ;
 
 ENTRYPOINT ["/usr/sbin/init"]
 # Docker entrypoint
