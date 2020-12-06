@@ -64,7 +64,7 @@ RUN yum install -y jq ;
 ## Install ssh client ##
 RUN yum install -y openssh-clients ;
 ##  ·· ""
-RUN mkdir /var/run/php-fpm
+RUN mkdir -p /var/run/php-fpm
 
 ENTRYPOINT ["/usr/sbin/init"]
 # Docker entrypoint
