@@ -24,7 +24,7 @@ RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
     rpm -Uvh http://rpms.remirepo.net/enterprise/remi-release-7.rpm ; \
     yum install yum-utils ; \
     yum-config-manager --enable remi-php74 ; \
-    yum install -y php php-curl php-json php-cli php-fpm  php-gd php-mysqlnd php-soap php-mbstring php-ldap php-mcrypt php-xml php-opcache php-bcmath php-imap php-posix php-pecl-zip php-pcov php-pear ; \
+    yum install -y php php-curl php-json php-cli php-fpm  php-gd php-mysqlnd php-soap php-mbstring php-ldap php-mcrypt php-imagick php-xml php-opcache php-bcmath php-imap php-posix php-pecl-zip php-pcov php-pear ; \
 ## configure php.ini ##
 RUN sed -i '/short_open_tag = Off/c; \short_open_tag = On' /etc/php.ini ; \
     sed -i '/post_max_size = 8M/c; \post_max_size = 24M' /etc/php.ini ; \
