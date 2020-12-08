@@ -7,7 +7,7 @@ LABEL processmaker-stack="pm4"
 
 WORKDIR /tmp/
 ## install tools ##
-RUN yum -y update && yum install -y wget yum-utils mod_ssl
+RUN yum -y update && yum install -y wget yum-utils mod_ssl unzip
 ## install mysql-client ##
 RUN yum remove -y mariadb* ; \
     yum localinstall -y https://repo.mysql.com//mysql57-community-release-el7-11.noarch.rpm ; \
